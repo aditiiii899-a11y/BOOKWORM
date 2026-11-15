@@ -1,0 +1,155 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+BOOKWORMS</title>
+<link rel="stylesheet" href="bookworm.css">
+</head>
+<body>
+<h1>
+WELCOME TO THE WORLD OF BOOKS
+</h1>
+
+<input type="text" id="searchInput" placeholder="search for the book" class="search" onchange="searchBooks()">
+<div id="bookResults"></div>
+
+<div class="explore">
+<h2>Explore Books</h2>
+<div class="book-container">
+
+<div class="books-suggestion">
+<img src="images/Run Wild.jpg">
+<h3>Run Wild </h3>
+<p> Author: WU ZHE </p>
+<a href="books/Run Wild( Sa Ye).pdf" target="_blank">
+Read PDF</a>
+</div>
+<div class="books-suggestion">
+<img src="images/atomichabit.jpg">
+<h3>Atomic Habit<h3>
+<p> Author: James Clear</p>
+<a href="books/ATOMIC HABIT.pdf" target="_blank">
+Read PDF</a>
+</div>
+
+<div class="books-suggestion">
+<img src="images/GHAZAL.jpg">
+<h3>GHAZAL<h3>
+<p> Author: Mir Taqi Mir </p>
+<a href="books/GHAZAL.pdf" target="_blank">
+Read PDF</a>
+</div>
+
+<div class="books-suggestion">
+<img src="images/haikyu.jpg">
+<h3>Haikyu volume:5<h3>
+<p> Author: Haruichi Furudate </p>
+<a href="books/HAIKYU.pdf" target="_blank">
+Read PDF</a>
+</div>
+
+<div class="books-suggestion">
+<img src="images/little mushroom.jpg">
+<h3>Little Mushroom<h3>
+<p> Author: Yi Shi Si Zhou </p>
+<a href="books/LITTLE MUSHROOM.pdf" target="_blank">
+Read PDF</a>
+</div>
+
+<div class="books-suggestion">
+<img src="images/MDZS.jpg">
+<h3>Mo Dao Zu Shi<h3>
+<p> Author: Mo Xiang Tong Xiu </p>
+<a href="books/MDZS.pdf" target="_blank">
+Read PDF</a>
+</div>
+
+<div class="books-suggestion">
+<img src="images/RI.jpg">
+<h3>Reverend Insanity<h3>
+<p> Author: Gu Zhen Re </p>
+<a href="books/RI.pdf" target="_blank">
+Read PDF</a>
+</div>
+
+<div class="books-suggestion">
+<img src="images/SVSSS.jpg">
+<h3>Scum Villian's Self-Saving System<h3>
+<p> Author: Mo Xiang Tong Xiu </p>
+<a href="books/SVSSS.pdf" target="_blank">
+Read PDF</a>
+</div>
+
+<div class="books-suggestion">
+<img src="images/TGCF.jpg">
+<h3>Heaven Official's Blessing<h3>
+<p> Author: Mo Xiang Tong Xiu</p>
+<a href="books/TGCF.jpg" target="_blank">
+Read PDF</a>
+</div>
+
+
+<div class="books-suggestion">
+<img src="images/TGWOMCE.jpg">
+<h3>The Graphic Work of MC Escher </h3>
+<p> Author: MC Escher</p>
+<a href="books/The Graphic Work of MC Escher.pdf" target="_blank">
+Read PDF</a>
+</div>
+
+<div class="books-suggestion">
+<img src="images/AIOFD.jpg">
+<h3>All in one for Dummies </h3>
+<p> Author: John Paul Mueller and Jeff Cogswell </p>
+<a href="books/All in one for Dummies.pdf" target="_blank">
+Read PDF</a>
+</div>
+</div>
+
+
+<hr>
+<div class="about">
+<h4>About Bookworm</h4>
+<p>Bookworm is a free digital library where readers can explore books in different genres and languages.</p>
+</div>
+<hr>
+<footer>
+<p>Bookworm - Your Digital Library</p>
+<p>Happy Reading!</p>
+<p>Copyright © 2026 Bookworm</p>
+</footer>
+
+<script>
+
+function searchBooks()
+{
+let search = document.getElementById("searchInput").value.toLowerCase();
+let books = document.getElementsByClassName("books-suggestion");
+let found=false;
+for(let i = 0; i < books.length; i++)
+{
+let title = books[i].getElementsByTagName("h3")[0].innerHTML.toLowerCase();
+let author = books[i].getElementsByTagName("p")[0].innerHTML.toLowerCase();
+if(title.includes(search) || author.includes(search))
+{
+books[i].style.display = "";
+found=true;
+}
+else
+{
+books[i].style.display = "none";
+}
+}
+if(search !="" && found==false)
+{
+alert("book not found");
+}
+else{
+document.getElementById("bookResults").innerHTML="";
+}
+}
+
+</script>
+</body>
+</html>
